@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Нова справа
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="close()" >
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Назва</ion-label>
+      <ion-input type="text" [(ngModel)]="newActivity.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Дата</ion-label>
+      <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="newActivity.date">
+      </ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Інформація</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="newActivity.description">        
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button full ion-button color="secondary" (click)="save()">Зберегти</button> 
+</ion-content>

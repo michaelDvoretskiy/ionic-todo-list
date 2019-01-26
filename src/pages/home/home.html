@@ -8,18 +8,23 @@
 
 <ion-content>
   <ion-item>
-      <ion-icon name="add-circle" item-start color="secondary"></ion-icon>
+      <ion-icon name="add-circle" item-start color="secondary" 
+          (click)="addActivity()"></ion-icon>
       <ion-label>
         Додати нову справу
       </ion-label>
   </ion-item>
   <ion-list>
       <ion-item text-wrap *ngFor="let toDo of toDoList">
-          <ion-label (click)="showActivityInfo(toDo)">
-              {{toDo.name}} 
-          </ion-label>
-          <ion-icon name="create" item-end color="primary"></ion-icon>
-          <ion-icon name="trash" item-end color="danger"></ion-icon>
+        <ion-label (click)="showActivityInfo(toDo)">
+            {{toDo.name}} 
+        </ion-label>
+        <ion-icon name="create" item-end color="primary" 
+            (click)="editActivity(toDo)">
+        </ion-icon>
+        <ion-icon name="trash" item-end color="danger" 
+            (click)="removeActivity(toDo)">
+        </ion-icon>
       </ion-item>
   </ion-list>
 </ion-content>
