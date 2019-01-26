@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Список справ
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-item>
+      <ion-icon name="add-circle" item-start color="secondary"></ion-icon>
+      <ion-label>
+        Додати нову справу
+      </ion-label>
+  </ion-item>
+  <ion-list>
+      <ion-item text-wrap *ngFor="let toDo of toDoList">
+          <ion-label (click)="showActivityInfo(toDo)">
+              {{toDo.name}} 
+          </ion-label>
+          <ion-icon name="create" item-end color="primary"></ion-icon>
+          <ion-icon name="trash" item-end color="danger"></ion-icon>
+      </ion-item>
+  </ion-list>
 </ion-content>

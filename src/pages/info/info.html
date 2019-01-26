@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Детальна інформація</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-header text-wrap>
+        {{ toDo.name }}
+      </ion-card-header>
+      <ion-card-content>
+        {{ toDo.description }}
+        <p class="date">( {{ toDo.date | date: 'dd.MM.yyyy' }} )</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

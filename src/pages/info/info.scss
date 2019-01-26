@@ -1,0 +1,8 @@
+page-info {
+    ion-card-header {
+        background-color: map-get($colors, primary) !important;
+    }
+    p.date {
+        float:right;
+    }
+}
